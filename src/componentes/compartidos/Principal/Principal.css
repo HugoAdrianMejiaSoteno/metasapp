@@ -1,0 +1,6 @@
+.principal{
+    background-color: aqua;
+    height: calc(100vh - 68px); /*Esto es para que el contenido prinicpal ocupe toda la pantalla de la computadora menos los espacios del encabezado y del footer, esto tmb hace que sea flexible*/
+    padding: 0px;
+    margin: 0px;
+}

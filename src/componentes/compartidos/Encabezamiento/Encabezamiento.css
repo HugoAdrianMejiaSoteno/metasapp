@@ -1,0 +1,44 @@
+.Encabezado{
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    margin: 0px;
+}
+
+.Encabezado-seccion1{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    align-items: center;
+}
+
+.Encabezado-titulo{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.svg-container{
+    height: 40px;
+    width: 40px;
+}
+
+.Encabezado-navegacion{
+    width: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Encabezado-navegacion-titulo{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.Encabezado-navegacion:hover{
+    background-color: hsla(0, 0%, 70%, 0.404);
+}
