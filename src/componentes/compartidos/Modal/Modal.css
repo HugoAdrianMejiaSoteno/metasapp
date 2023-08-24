@@ -1,0 +1,21 @@
+
+/* Esto es pa poner el  fondo y poner centrar los elementos*/
+.Modal-container{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: hsla(0, 4%, 46%, 0.712);
+   
+}
+/* esto tmb fue pa centrar el modal */
+.Modal{ 
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width: 50%;
+}
+

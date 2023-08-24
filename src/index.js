@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, HashRouter } from 'react-router-dom'; 
+import Memoria from './componentes/servicios/Memoria'; //Componente donde manejamos el contexto o bien el estado general de todos los componentes
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Memoria>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Memoria>
   </React.StrictMode>
 );
 

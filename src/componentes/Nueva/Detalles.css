@@ -1,0 +1,60 @@
+.Detalles-container{
+    background-color: white;
+    height: 90%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow:  0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-container{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-label-container{
+    margin: 5px;
+    height: 15%;
+    color: black;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-input-juntos{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.detalles-input{
+    width: 100%;
+}
+
+.detalles-texto{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.espacio{
+    width: 48%;
+}
+
+.detalles-botones-container{
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+

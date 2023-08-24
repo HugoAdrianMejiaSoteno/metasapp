@@ -1,6 +1,29 @@
 .principal{
-    background-color: aqua;
     height: calc(100vh - 68px); /*Esto es para que el contenido prinicpal ocupe toda la pantalla de la computadora menos los espacios del encabezado y del footer, esto tmb hace que sea flexible*/
     padding: 0px;
     margin: 0px;
+    display: flex;
+}
+
+.aside{
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+    background-color: rgba(0, 0, 0, 0.041);
+}
+
+.aside-titulo{
+    text-decoration: none;
+
+}
+
+.main{
+    width: 80%;
+    overflow: scroll; /*Esta propiedad es para q s el contenido excede el tamano se colocara un scroll para haceer pues scroll*/
+}
+
+.encabezado-izq-icono{
+    margin-left: 20px;
+    height: 40px;
+    width: 40px;
 }

@@ -1,0 +1,79 @@
+.meta{
+    text-decoration: none;
+    margin-top: 15px;
+    display: flex;
+    border-radius: 1rem;
+    color: gray;
+    margin-left: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta-seccion1{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    height: 100%;
+    width: 50%;
+}
+
+.meta-icono{
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.seccion1-tiempo{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.sub{
+    font-size: 10px;
+}
+
+.seccion1-detalles{
+    margin-left: 50px;
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.meta-seccion2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-right: 20px;
+    width: 40%;
+}
+
+.seccion2-btn{
+    height: 60%;
+}
+
+.meta-completado{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.completado-texto{
+    margin-bottom: 5px;
+}

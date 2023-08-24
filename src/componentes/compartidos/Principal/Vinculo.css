@@ -1,0 +1,19 @@
+.Vinculo{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: black;
+}
+
+.Vinculo:hover{
+    background-color: hsla(0, 0%, 70%, 0.404);
+}
+
+.Vinculo-texto{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 500;
+}

@@ -1,9 +1,12 @@
 .footer{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 20px;
-    background: linear-gradient(to right, hsl(318, 100%, 50%), hsl(283, 100%, 50%));
+    background: linear-gradient(to right, rgb(197, 197, 197), hwb(0 42% 58%));
     color: white;
     font: 15px;
     justify-content: center;
     display: flex;
     align-items: center;
+    position: relative
+    
 }
