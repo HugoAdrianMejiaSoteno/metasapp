@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "detalles": "Correr por 30 minutos",
+        "periodo": "dia",
+        "eventos": 1,
+        "icono": "🏃",
+        "meta": 365,
+        "plazo": "2030-01-01",
+        "completado": 5
+    },
+    {
+        "id": "2",
+        "detalles": "Viajar por el mundo",
+        "periodo": "mes",
+        "eventos": 2,
+        "icono": "✈️",
+        "meta": 5,
+        "plazo": "2030-08-11",
+        "completado": 3
+    },
+    {
+        "id": "3",
+        "detalles": "Escuchar The Weeknd",
+        "periodo": "dia",
+        "eventos": 5,
+        "icono": "🎸",
+        "meta": 12,
+        "plazo": "2030-05-17",
+        "completado": 10
+    }
+]

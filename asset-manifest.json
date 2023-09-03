@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/metasapp/static/css/main.9b0406b2.css",
+    "main.js": "/metasapp/static/js/main.04b2fd9a.js",
+    "static/js/787.01b9a275.chunk.js": "/metasapp/static/js/787.01b9a275.chunk.js",
+    "index.html": "/metasapp/index.html",
+    "static/media/lista.svg": "/metasapp/static/media/lista.923c40d45a41bf4214ccbd2269172ce6.svg",
+    "static/media/nueva.svg": "/metasapp/static/media/nueva.4d0d03cbbb94467e5ebd5830c14ce135.svg",
+    "main.9b0406b2.css.map": "/metasapp/static/css/main.9b0406b2.css.map",
+    "main.04b2fd9a.js.map": "/metasapp/static/js/main.04b2fd9a.js.map",
+    "787.01b9a275.chunk.js.map": "/metasapp/static/js/787.01b9a275.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b0406b2.css",
+    "static/js/main.04b2fd9a.js"
+  ]
+}
