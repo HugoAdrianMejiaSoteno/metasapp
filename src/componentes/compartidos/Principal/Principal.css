@@ -27,3 +27,11 @@
     height: 40px;
     width: 40px;
 }
+
+@media (max-width: 768px) {
+    .encabezado-izq-icono{
+        margin-left: 22%;
+        margin-top: 10px;
+    }
+
+}

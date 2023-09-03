@@ -6,6 +6,8 @@ import {ReactComponent as Nueva} from '../../../Imagenes/nueva.svg';
 
 //Como el contenido prinicpl incluye la navegacion izquierda y el contenido y lo que va a cambiar de forma dinamica a lo que querramos mostrar va a ser contenido por eso lo pasamos como children para que de acuerdo a diferentes acciones este pueda in renderizando diferentes componentes en la pagina
 
+//En app vemos que dentro de layout pasamos los demas componentes, en layout colocamos outled para las rutas de esos componentes y aqui en principal colocamos children que sera el renderizado aqui de esos componentes 
+
 function Principal({children}) {
     return (
       <div className="principal">

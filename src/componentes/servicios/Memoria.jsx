@@ -41,23 +41,24 @@ export const Contexto = createContext(null);
 
 
 //Comentamos esto para implementar lo de local storage
-// const estadoInicial = {
-//     orden: [],
-//     objetos: {}
-// }
+const estadoInicial = {
+    orden: [],
+    objetos: {}
+}
+
 
 //Creamos el estado memoria que va a ser el estado que se va a guardar en localstorage, este va a acceder a la info mediante la clave metas
-const memoria = localStorage.getItem('metas');
+//const memoria = localStorage.getItem('metas');
 
 //el estado inicial de la pagina sera la memoria en caso de haberla y sino sera el objeto vacio
 //Con esto en caso de que la pagina se cargue por primera vez y no haya datos en memoria va a mostrar el estadoInicial vacio, en caso de hacer alguna accion del crud el setItekm nos va a permitir actualizar el estado y vamos a poder mostrar la memoria que sera ahora el nuevo estado
 
 //el estado sera el contenido guardado en memoria de localStorage, en caso de no haber se muestra el estado vacio
 //transformamos a memoria en entero pq en localstorage lo estamos guardando en texto, osea lo mandamos en texto nosotoros y se guarda asi y ya para ocupar y mostrarlo lo volvemos a traer pero en numero pq se opera en numero
-const estadoInicial = memoria ? JSON.parse(memoria) : { 
-    orden: [],
-    objetos: {}
- }
+// const estadoInicial = memoria ? JSON.parse(memoria) : { 
+//     orden: [],
+//     objetos: {}
+//  }
 
 //En la funcion reductor es donde vamos a decir que operacion del crud hacer, esta actualiza el estadoInicial modificando el objeto, tiene dos parametros, el estado y la accion que vamos a realizar
 const reductor = (estado, accion)=>{ //En el reductor el primer argumento es el estado general
@@ -65,23 +66,24 @@ const reductor = (estado, accion)=>{ //En el reductor el primer argumento es el 
     switch(accion.tipo){
         case 'colocar' : {
             const metas = accion.metas; //Sacamos la lista de metas
+            console.log(metas);
             const nuevoEstado = { //creamos un nuevo estado con su propiedad orden y objetos
                 orden: metas.map(meta => meta.id), //en orden vamos a mapear las metas creando un nuevo arreglo con solo las id de todas las metas
                 objetos: metas.reduce((objeto, meta)=>({...objeto, [meta.id]: meta}), {}) //aqui en objetos vamos a tener el objeto con las propiedades de cada meta, pero con la nueva propiedad de id asignada a cada uno de los objetos que vienen de metas, este metodo es mas que nada para agregar una propiedad a cada objeto del arrray de metas, pasamos como primer parametro el objeto o bien lo que sera el objeto inicial vacio y a ese se le van a meter las metas ya que es metas.reduce y el seguno argumento es lo que le vamos a asignar de nuevo, lo podemosber en meta.id: meta, en este caso lo nuevo que le metimos o combinamos fue el arreglo de las identificaciones, podemos ver esto mas claramente imprimienolo en la consola
             };
             //Llamamos a set item de local storage, ese coloca el estado en localstorage, recibe dos argumentos, la clave en este caso 'metas'  donde va a guardar la info y el estado pero localstorage solo  maneja texto por lo cual tenemos que transformar esa informacion a texto ya que hay partes numericas del estado
-            localStorage.setItem('metas', JSON.stringify(nuevoEstado));
+            //localStorage.setItem('metas', JSON.stringify(nuevoEstado));
             return nuevoEstado;
         };
         case 'crear' : {
-            const id = Math.random(); //Simulamos un id al azar que es el id automatico que crearia la abse de datos
+            const id = accion.meta.id//const id = Math.random(); //Simulamos un id al azar que es el id automatico que crearia la abse de datos
             //console.log(id);
             const nuevoEstado = {
                 orden: [...estado.orden, id], //Tomamo el estado anterior del arreglo de las indentificaciones y anadimos la nueva id
                 objetos: { ...estado.objetos, [id]: {...accion.meta, id} } //Aqui actualizamos el estado de los objetos anteriores anadiendo el nuevo objeto el cual se anade con su nueva id y su meta que viene de accion.meta
             };
             //console.log(nuevoEstado);
-            localStorage.setItem('metas', JSON.stringify(nuevoEstado)); //Lo colocamos en cada caso para que tmb se actualice el local storage
+            //localStorage.setItem('metas', JSON.stringify(nuevoEstado)); //Lo colocamos en cada caso para que tmb se actualice el local storage
             return nuevoEstado;
         };
 
@@ -96,7 +98,7 @@ const reductor = (estado, accion)=>{ //En el reductor el primer argumento es el 
             */
            //Esto solo es para decirle a react que el estado ha cambiado y actualice los componentes que lo estan ocupando en caso de que haya mas dependiendo de este estado
             const nuevoEstado = {...estado};
-            localStorage.setItem('metas', JSON.stringify(nuevoEstado));
+            //localStorage.setItem('metas', JSON.stringify(nuevoEstado));
             return nuevoEstado;
         };
 
@@ -107,7 +109,7 @@ const reductor = (estado, accion)=>{ //En el reductor el primer argumento es el 
             const nuevoEstado = {
                 orden: nuevoOrden, objetos: estado.objetos
             };
-            localStorage.setItem('metas', JSON.stringify(nuevoEstado));
+            //localStorage.setItem('metas', JSON.stringify(nuevoEstado));
             return nuevoEstado
         };
         //En caso de que no se pase la accion indicada vamos a tirar el errror

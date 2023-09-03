@@ -1,5 +1,4 @@
 import './Encabezamiento.css';
-import {Link} from 'react-router-dom';
 function Encabezamiento() {
     return (
       <header className="Encabezado">
@@ -11,9 +10,6 @@ function Encabezamiento() {
           </div>
           <a href="/" className='Encabezado-titulo'>METAS APP</a>
         </div>
-        <nav className='Encabezado-navegacion'>
-            <Link to="/Perfil" className='Encabezado-navegacion-titulo'>Perfil</Link>
-        </nav>
       </header>
     );
   }

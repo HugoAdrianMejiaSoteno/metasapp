@@ -1,12 +1,30 @@
 .footer{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 20px;
-    background: linear-gradient(to right, rgb(197, 197, 197), hwb(0 42% 58%));
+    background: linear-gradient(to right, hwb(209 11% 7% / 0.678), hwb(212 5% 47%));
     color: white;
-    font: 15px;
+    font-size: 12px;
     justify-content: center;
     display: flex;
     align-items: center;
-    position: relative
-    
+    width: 100%;    
+}
+
+
+@media (max-width: 768px) {
+    .footer{
+        height: 15px;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        padding: 2px;
+        align-items: center;
+        position: fixed;
+        flex-wrap: wrap;
+    }
+    .footer-texto{
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
 }

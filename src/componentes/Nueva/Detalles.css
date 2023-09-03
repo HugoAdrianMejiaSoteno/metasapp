@@ -57,4 +57,9 @@
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .Detalles-container{
+        width: 90%;
+    }
+}
 

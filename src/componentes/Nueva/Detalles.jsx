@@ -3,6 +3,9 @@ import "./Detalles.css"
 import {TextField, MenuItem, Button} from '@mui/material';
 import { Contexto } from "../servicios/Memoria"; //Importamos el contexto
 import { useNavigate, useParams } from "react-router-dom";
+import { actualizarMeta, borrarMeta, crearMeta } from "../servicios/Pedidos";
+import { validarDetalles } from "./validaciones";
+import { setValidar } from "./validaciones";
 const Detalles = ()=>{
 
   //Estado del formulario
@@ -18,6 +21,9 @@ const Detalles = ()=>{
     }
   );
   const { detalles, eventos, periodo, icono, meta, plazo, completado } = form;
+  //Opciones e iconos
+  const opcionesFrecuencia = ["dia", "semana","mes","año"];
+  const iconos = ["🏃","✈️","🎸", "💻","⚽"];
 
   //Funcion onChange del formulario de sus inputs
   const onChange = (e, prop) =>{
@@ -47,14 +53,23 @@ const Detalles = ()=>{
     },[id]
   );
 
-  const opcionesFrecuencia = ["dia", "semana","mes","ano"];
-  const iconos = ["🏃","✈️","🎸", "💻","⚽"];
-
-
+  //Para hacer validaciones en los imputs con la funcion de validaciones.js
+  const [validar, setValidar] = useState([
+    {
+      "detalles": null,
+      "eventos": null,
+      "periodo": null,
+      "icono": null,
+      "meta": null,
+      "plazo": null,
+      "completado": null
+    }
+  ]);
   
 
-  const crear = ()=>{
-    enviar({ tipo: 'crear', meta: form }); //Llamamos a la funcion enviar  y le mandamos el tipo de operacion y en meta mandamos el estado actual del formulario
+  const crear = async ()=>{
+    const nuevaMeta = await crearMeta(form); //enviamos el formulario a crear meta
+    enviar({ tipo: 'crear', meta: nuevaMeta }); //Llamamos a la funcion enviar  y le mandamos el tipo de operacion y en meta mandamos el estado actual del formulario
     navegar('/lista');
   }
 
@@ -62,13 +77,15 @@ const Detalles = ()=>{
     navegar('/lista');
   }
 
-  const actualizar = () =>{
-    enviar({ tipo: 'actualizar', meta: form });
+  const actualizar = async() =>{
+    const metaActualizada = await actualizarMeta(form);
+    enviar({ tipo: 'actualizar', meta: metaActualizada });
     navegar('/lista');
   }
 
-  const borrar = ()=>{
-    enviar({ tipo: 'borrar', id: id })
+  const borrar = async()=>{
+    await borrarMeta(form.id);
+    enviar({ tipo: 'borrar', id: form.id })
     navegar('/lista');
   }
 
@@ -77,7 +94,15 @@ const Detalles = ()=>{
       <form action="" className="formulario-container">
         <label htmlFor="" className="detalles-label-container">
           <p className="detalles-texto">Describe tu meta</p>
-          <TextField id="outlined-basic" variant="outlined" placeholder="ej. 52 caminatas" type="text" size="small"  className="detalles-input" margin="none" value={detalles} onChange={e=> onChange(e, "detalles")}/>
+          <TextField id="outlined-basic" variant="outlined" placeholder="ej. 52 caminatas" type="text" size="small"  className="detalles-input" margin="none" value={detalles} onChange={(e)=> {
+            onChange(e, "detalles");
+            const prop = "detalles";
+            const valor = e.target.value;
+            const valid = validarDetalles(valor);
+            setValidar((estado)=>({...estado, [prop]:valid}));
+            }} 
+            error={validar.detalles === false}
+            helperText={validar.detalles == false && 'Debe contener al menos 2 caracteres'}/>
         </label>
         <label htmlFor="" className="detalles-label-container">
           <p className="detalles-texto"> Con que frecuencia deseas cumplir tu meta?</p>
